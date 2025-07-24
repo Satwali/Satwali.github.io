@@ -1,3 +1,78 @@
+/* Tombol Lagu di pojok kanan atas portofolio.html */
+.btn-lagu#btn-lagu-porto {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    z-index: 200;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 10px 18px;
+    font-size: 1rem;
+}
+@media (max-width: 576px) {
+    .btn-lagu#btn-lagu-porto {
+        top: 8px;
+        right: 8px;
+        padding: 8px 10px;
+        font-size: 0.95rem;
+    }
+}
+/* HERO SECTION CUSTOM (dari index.html) */
+.hero-content-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.hero-btn-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+/* Tombol Lagu (Audio Button) */
+.audio-btn {
+    display: inline-block;
+    padding: 14px 38px;
+    background: var(--primary-light);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.08rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: 0 2px 8px rgba(30,136,229,0.10);
+    margin: 18px 0 28px 0;
+    outline: none;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+.audio-btn:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(30,136,229,0.13);
+}
+.audio-btn:active {
+    background: var(--primary-dark);
+    color: #fff;
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 576px) {
+    .audio-btn {
+        width: 100%;
+        padding: 14px 0;
+        font-size: 1rem;
+    }
+}
+@media (max-width: 576px) {
+    .hero-btn-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
 /* PORTOFOLIO BANNER STYLES */
 .banner-container {
     width: 100%;

@@ -6,6 +6,42 @@
     <title>XII PPLG 1 | Satwa_Liar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        .btn-lagu {
+            display: inline-block;
+            padding: 14px 38px;
+            background: #42a5f5;
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.08rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+            box-shadow: 0 2px 8px rgba(30,136,229,0.10);
+            margin: 18px 0 28px 0;
+            outline: none;
+            letter-spacing: 0.2px;
+            text-align: center;
+        }
+        .btn-lagu:hover {
+            background: #1e88e5;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(30,136,229,0.13);
+        }
+        .btn-lagu:active {
+            background: #1565c0;
+            color: #fff;
+            transform: translateY(1px);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+        }
+        @media (max-width: 576px) {
+            .btn-lagu {
+                width: 100%;
+                padding: 14px 0;
+                font-size: 1rem;
+            }
+        }
         :root {
             --primary: #1e88e5;
             --primary-dark: #1565c0;
@@ -36,24 +72,23 @@
         }
         
         /* Header */
-header {
-    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-    color: var(--white);
-    padding: 8px 0 8px 0;
-    min-height: 56px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    transition: background 0.3s, box-shadow 0.3s;
-}
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 6px 0 6px 0;
+            min-height: 44px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
         
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 40px;
-}
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 36px;
+        }
         
         .logo {
     display: flex;
@@ -62,7 +97,7 @@ header {
 }
 
 .logo img {
-    height: 44px;
+    height: 32px; /* Logo lebih kecil */
     width: auto;
 }
 
@@ -71,36 +106,34 @@ header {
             font-size: 2rem;
         }
         
-.logo-text h1 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
+        .logo-text h1 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
         
-.logo-text p {
-    font-size: 0.7rem;
-    opacity: 0.8;
-    margin-top: 2px;
-}
+        .logo-text p {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
         
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 18px;
-    margin-top: 0;
-    align-items: center;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 16px;
+        }
         
-nav a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.98rem;
-    transition: all 0.3s ease;
-    padding: 4px 0;
-    position: relative;
-    letter-spacing: 0.5px;
-}
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 2px 0;
+            position: relative;
+            letter-spacing: 0.2px;
+        }
         
         nav a:hover {
             opacity: 0.8;
@@ -120,25 +153,7 @@ nav a {
         nav a:hover::after {
             width: 100%;
         }
-.portfolio-nav-btn {
-    background-color: var(--white);
-    color: var(--primary);
-    padding: 5px 14px;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    margin-left: 10px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
         
-        .portfolio-nav-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            opacity: 1;
-        }
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
@@ -146,52 +161,46 @@ nav a {
         }
         
         /* Hero Section */
-.hero {
-    background: linear-gradient(rgba(30, 136, 229, 0.9), rgba(21, 101, 192, 0.9)), url('ft/atas.jpg');
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
-    padding: 120px 0 80px 0;
-    text-align: center;
-    min-height: 420px;
-    width: 100%;
-    left: unset;
-    right: unset;
-    margin-left: 0;
-    margin-right: 0;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-}
+        .hero {
+            background: linear-gradient(rgba(30, 136, 229, 0.9), rgba(21, 101, 192, 0.9)), url('ft/atas.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            min-height: 100vh;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
         
-.hero h2 {
-    font-size: 1.7rem;
-    margin-bottom: 16px;
-    animation: fadeIn 1s ease;
-    letter-spacing: 1px;
-}
+        .hero h2 {
+            font-size: 1.7rem;
+            margin-bottom: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            animation: fadeIn 1s ease;
+        }
         
-.hero p {
-    font-size: 1rem;
-    max-width: 600px;
-    margin: 0 auto 22px;
-    animation: fadeIn 1.5s ease;
-}
+        .hero p {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 18px;
+            animation: fadeIn 1.5s ease;
+        }
         
-.btn {
-    display: inline-block;
-    background-color: var(--white);
-    color: var(--primary);
-    padding: 8px 22px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.98rem;
-    transition: all 0.3s ease;
-    animation: fadeIn 3s ease;
-}
+        .btn {
+            display: inline-block;
+            background-color: var(--white);
+            color: var(--primary);
+            padding: 8px 22px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.98rem;
+            transition: all 0.3s ease;
+            animation: fadeIn 3s ease;
+        }
         
         .btn:hover {
             transform: translateY(-3px);
@@ -569,29 +578,20 @@ nav a {
             .about-content {
                 flex-direction: column;
             }
+            
             .about-img, .about-text {
                 flex: none;
                 width: 100%;
             }
-            .hero {
-                padding: 60px 0 40px 0;
-                min-height: 220px;
-            }
-            header {
-                padding: 6px 0;
-            }
-            .logo img {
-                height: 36px;
-            }
         }
         
         @media (max-width: 768px) {
-            .nav {
+            nav {
                 position: fixed;
-                top: 56px;
+                top: 80px;
                 left: -100%;
                 width: 80%;
-                height: calc(100vh - 56px);
+                height: calc(100vh - 80px);
                 background-color: var(--primary-dark);
                 flex-direction: column;
                 align-items: center;
@@ -599,24 +599,26 @@ nav a {
                 transition: all 0.5s ease;
                 z-index: 99;
             }
-            .nav.active {
+            
+            nav.active {
                 left: 0;
             }
-            .nav ul {
+            
+            nav ul {
                 flex-direction: column;
-                gap: 24px;
+                gap: 30px;
             }
+            
             .mobile-menu {
                 display: block;
             }
+            
             .hero h2 {
-                font-size: 1.2rem;
+                font-size: 2rem;
             }
+            
             .hero p {
-                font-size: 0.95rem;
-            }
-            header {
-                padding: 4px 0;
+                font-size: 1rem;
             }
         }
         
@@ -640,7 +642,6 @@ nav a {
             }
         }
     </style>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -660,9 +661,9 @@ nav a {
             <nav id="navbar">
                 <ul>
                     <li><a href="#home">Beranda</a></li>
-                    <li><a  href="#about">Tentang</a></li>
-                    <li><a  href="#students">Siswa</a></li>
-                    <li><a  href="#gallery">Galeri</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#students">Siswa</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
@@ -675,112 +676,21 @@ nav a {
     <!-- Hero Section -->
 
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Selamat Datang di Kelas XII PPLG 1</h2>
-            <p>Kelas Pengembangan Perangkat Lunak dan Gim angkatan 2023-2026 yang penuh dengan bakat dan kreativitas di bidang Pengembangan Perangkat Lunak dan Gim.</p>
-            <div style="margin-bottom: 18px;">
-                <a href="#about" class="btn">Pelajari Lebih Lanjut</a>
-                <a href="portofolio.html" class="btn btn-outline" target="_blank">Lihat Portofolio Siswa</a>
+        <div class="container hero-content-center">
+            <h2>XII PPLG 1 - Satwa_Liar</h2>
+            <p>Kami adalah keluarga kreatif, solid, dan penuh semangat dari MAKN Ende. Siap menaklukkan dunia teknologi, satu baris kode dan tawa setiap hari!</p>
+            <div class="hero-btn-group">
+                <a href="#about" class="btn">Tentang Kelas</a>
+                <a href="portofolio.html" class="btn btn-outline">Portofolio Siswa</a>
             </div>
-            <button class="btn btn-lagu" onclick="playAudio()">Putar Lagu 🎵</button>
+            <button id="btn-lagu-index" class="btn-lagu" style="min-width:44px;min-height:44px;padding:10px 18px;font-size:1rem;">
+                <i id="icon-lagu-index" class="fas fa-music"></i> <span id="text-lagu-index">Putar Lagu</span>
+            </button>
             <audio id="lagu">
               <source src="g/kelas.mp3" type="audio/mpeg">
             </audio>
         </div>
-    </section>
-    <script src="main.js"></script>
 
-
-    <style>
-    /* HERO FULLSCREEN OVERRIDE */
-    .hero {
-        min-height: 100vh !important;
-        padding: 0 !important;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .hero-content {
-        max-width: 950px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 80vh;
-        min-height: 500px;
-    }
-    .hero h2 {
-        font-size: 2.7rem;
-        margin-bottom: 24px;
-        font-weight: 800;
-        letter-spacing: 1.5px;
-        line-height: 1.15;
-        animation: fadeIn 1s ease;
-    }
-    .hero p {
-        font-size: 1.25rem;
-        max-width: 700px;
-        margin: 0 auto 32px;
-        animation: fadeIn 1.5s ease;
-        line-height: 1.6;
-    }
-    .btn-lagu {
-        background: var(--primary-light);
-        color: #fff;
-        border: none;
-        border-radius: 50px;
-        font-size: 1.1rem;
-        font-weight: 600;
-        padding: 14px 40px;
-        margin-top: 16px;
-        margin-bottom: 10px;
-        box-shadow: 0 2px 8px rgba(30,136,229,0.10);
-        cursor: pointer;
-        transition: all 0.2s;
-        outline: none;
-    }
-    .btn-lagu:hover {
-        background: var(--primary);
-        color: #fff;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(30,136,229,0.13);
-    }
-    @media (max-width: 992px) {
-        .hero {
-            min-height: 80vh !important;
-        }
-        .hero-content {
-            max-width: 98vw;
-            padding: 0 10px;
-            min-height: 350px;
-            height: 70vh;
-        }
-        .hero h2 {
-            font-size: 1.7rem;
-        }
-        .hero p {
-            font-size: 1.05rem;
-        }
-    }
-    @media (max-width: 768px) {
-        .hero {
-            min-height: 70vh !important;
-        }
-        .hero-content {
-            max-width: 99vw;
-            padding: 0 8px;
-            min-height: 220px;
-            height: 60vh;
-        }
-        .hero h2 {
-            font-size: 1.2rem;
-        }
-        .hero p {
-            font-size: 0.95rem;
-        }
-    }
-    </style>
 
 
     </section>
@@ -1357,233 +1267,6 @@ nav a {
         </div>
     </footer>
 
-    <script>
-        // --- CURSOR ANIMASI HEWAN & JEJAK ---
-        // Daftar gambar hewan kecil (gunakan gambar di folder ft/ atau emoji sebagai fallback)
-        const animalImgs = [
-            'ft/putih.png', 'ft/atas.jpg', 'ft/ARDINI.JPG', 'ft/ASTITIN.JPG', 'ft/AULIA.JPG', 'ft/BASBA.JPG',
-            'ft/CAHAYA.JPG', 'ft/DANDI.JPG', 'ft/DINI.JPG', 'ft/EMSIT.JPG', 'ft/FAIT.JPG', 'ft/FAIZ.JPG',
-            'ft/FITRI.JPG', 'ft/HABIB.JPG', 'ft/HANIF.JPG', 'ft/ILYANI.JPG', 'ft/IRHAM.JPG', 'ft/IYAAS.JPG',
-            'ft/KIKAN.JPG', 'ft/MAHYA.JPG', 'ft/MEISYA.JPG', 'ft/NABILA.JPG', 'ft/SUBANDRIO.JPG', 'ft/SUBHAN.JPG',
-            'ft/UMI.JPG', 'ft/ZEE.JPG', 'ft/syafik.png'
-        ];
-        // Buat elemen cursor custom
-        const cursor = document.createElement('div');
-        cursor.id = 'custom-cursor';
-        document.body.appendChild(cursor);
-        cursor.style.position = 'fixed';
-        cursor.style.pointerEvents = 'none';
-        cursor.style.zIndex = '9999';
-        cursor.style.width = '22px';
-        cursor.style.height = '22px';
-        cursor.style.transform = 'translate(-50%, -50%)';
-        cursor.style.borderRadius = '50%';
-        cursor.style.background = 'rgba(255,255,255,0.18)';
-        cursor.style.backdropFilter = 'blur(6px)';
-        cursor.style.boxShadow = '0 0 16px 8px rgba(255,255,255,0.18)';
-        cursor.style.display = 'block';
-        // Sembunyikan default cursor
-        document.body.style.cursor = 'none';
-        // Jejak
-        function createTrail(x, y) {
-            const trail = document.createElement('div');
-            trail.className = 'cursor-trail';
-            trail.style.position = 'fixed';
-            trail.style.left = x + 'px';
-            trail.style.top = y + 'px';
-            trail.style.width = '18px';
-            trail.style.height = '18px';
-            trail.style.borderRadius = '50%';
-            trail.style.background = 'rgba(30,136,229,0.15)';
-            trail.style.pointerEvents = 'none';
-            trail.style.zIndex = '9998';
-            trail.style.transition = 'opacity 0.7s linear';
-            document.body.appendChild(trail);
-            setTimeout(() => { trail.style.opacity = '0'; }, 10);
-            setTimeout(() => { trail.remove(); }, 700);
-        }
-        // Hewan random
-        function createAnimal(x, y) {
-            const img = document.createElement('img');
-            img.src = animalImgs[Math.floor(Math.random() * animalImgs.length)];
-            img.style.position = 'fixed';
-            img.style.left = (x + Math.random()*30-15) + 'px';
-            img.style.top = (y + Math.random()*30-15) + 'px';
-            img.style.width = '28px';
-            img.style.height = '28px';
-            img.style.borderRadius = '50%';
-            img.style.objectFit = 'cover';
-            img.style.pointerEvents = 'none';
-            img.style.zIndex = '9998';
-            img.style.opacity = '0.85';
-            img.style.transition = 'opacity 0.8s linear, transform 0.8s linear';
-            document.body.appendChild(img);
-            setTimeout(() => {
-                img.style.opacity = '0';
-                img.style.transform = 'scale(1.3) translateY(-10px)';
-            }, 10);
-            setTimeout(() => { img.remove(); }, 800);
-        }
-        // Gerak cursor
-        // Throttle gambar hewan agar tidak terlalu sering
-let lastAnimalTime = 0;
-const animalDelay = 350; // ms, lebih lama agar tidak spam
-document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    createTrail(e.clientX, e.clientY);
-    const now = Date.now();
-    if (now - lastAnimalTime > animalDelay) {
-        createAnimal(e.clientX, e.clientY);
-        lastAnimalTime = now;
-    }
-});
-        // Sembunyikan cursor custom saat keluar window
-        document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
-        document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
-
-        // --- STICKY NAVBAR ---
-        const nav = document.querySelector('header');
-        const navBar = document.getElementById('navbar');
-        
-        // Set style default (gradient biru)
-        nav.style.cssText = `
-            transition: box-shadow 0.3s ease;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-        `;
-
-        // Tambah shadow saat scroll
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 0) {
-                nav.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
-            } else {
-                nav.style.boxShadow = 'none';
-            }
-        });
-
-        // Setup Intersection Observer untuk animasi smooth
-        const options = {
-            threshold: 0.1, // Trigger lebih awal untuk animasi yang lebih smooth
-            rootMargin: '-80px 0px 0px 0px' // Offset untuk header height
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const targetSection = entry.target;
-                
-                // Dapatkan posisi scroll
-                const scrollPosition = window.scrollY;
-                const heroSection = document.querySelector('.hero');
-                const studentsSection = document.querySelector('.students');
-                const contactSection = document.querySelector('.contact');
-                
-                // Cek posisi sections
-                const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-                const studentsTop = studentsSection.offsetTop;
-                const studentsBottom = studentsSection.offsetTop + studentsSection.offsetHeight;
-                const contactTop = contactSection.offsetTop;
-                
-                // Update navbar style berdasarkan posisi scroll
-                if (scrollPosition < heroBottom - 100) {
-                    updateNavStyle(false); // Default style di hero section
-                } else if (scrollPosition >= studentsTop - 100 && scrollPosition <= studentsBottom) {
-                    updateNavStyle(true); // Light style di students section
-                } else if (scrollPosition >= contactTop - 100) {
-                    updateNavStyle(true); // Light style di contact section
-                } else {
-                    updateNavStyle(false); // Default style di sections lain
-                }
-            });
-        }, options);
-
-        // Observe semua section
-        document.querySelectorAll('.hero, .about, .students, .contact').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Set warna default saat load
-        updateNavStyle(headerClasses.default);
-        
-        // Update sticky class saat scroll
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('sticky', window.scrollY > 0);
-        });
-        //audio
-  function playAudio() {
-    const audio = document.getElementById("lagu");
-    audio.play().catch((err) => {
-      alert("Gagal memutar lagu: " + err.message);
-    });
-  }
-
-        // Mobile Menu Toggle
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navbar = document.getElementById('navbar');
-        
-        mobileMenu.addEventListener('click', () => {
-            navbar.classList.toggle('active');
-            mobileMenu.innerHTML = navbar.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                if (navbar.classList.contains('active')) {
-                    navbar.classList.remove('active');
-                    mobileMenu.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Scroll Animation
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
-        
-        // Show More Students
-        const showMoreStudentsBtn = document.getElementById('show-more-students');
-        const hiddenStudents = document.querySelectorAll('.student-card.hidden');
-        
-        showMoreStudentsBtn.addEventListener('click', () => {
-            hiddenStudents.forEach(student => {
-                student.classList.toggle('hidden');
-            });
-            
-            if (showMoreStudentsBtn.textContent === 'Lihat Lainnya') {
-                showMoreStudentsBtn.textContent = 'Sembunyikan';
-            } else {
-                showMoreStudentsBtn.textContent = 'Lihat Lainnya';
-                // Scroll ke section students setelah menyembunyikan
-                document.getElementById('students').scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-        
-        // Show More Gallery
-        const showMoreGalleryBtn = document.getElementById('show-more-gallery');
-        const hiddenGalleryItems = document.querySelectorAll('.gallery-item.hidden');
-        
-        showMoreGalleryBtn.addEventListener('click', () => {
-            hiddenGalleryItems.forEach(item => {
-                item.classList.toggle('hidden');
-            });
-            
-            if (showMoreGalleryBtn.textContent === 'Lihat Lainnya') {
-                showMoreGalleryBtn.textContent = 'Sembunyikan';
-            } else {
-                showMoreGalleryBtn.textContent = 'Lihat Lainnya';
-                // Scroll ke section gallery setelah menyembunyikan
-                document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>

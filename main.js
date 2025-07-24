@@ -147,3 +147,119 @@ window.playAudio = function() {
         alert("Gagal memutar lagu: " + err.message);
     });
 };
+// === AUDIO SYNC BETWEEN PAGES ===
+const AUDIO_KEY = 'kelas_audio_playing';
+const AUDIO_TIME_KEY = 'kelas_audio_time';
+
+function setAudioStatus(isPlaying, currentTime) {
+    localStorage.setItem(AUDIO_KEY, isPlaying ? '1' : '0');
+    if (typeof currentTime === 'number') {
+        localStorage.setItem(AUDIO_TIME_KEY, currentTime);
+    }
+}
+
+function getAudioStatus() {
+    return localStorage.getItem(AUDIO_KEY) === '1';
+}
+function getAudioTime() {
+    return parseFloat(localStorage.getItem(AUDIO_TIME_KEY) || '0');
+}
+
+// === INDEX.HTML AUDIO ===
+if (document.getElementById('lagu')) {
+    const audio = document.getElementById('lagu');
+    const btn = document.getElementById('btn-lagu-index');
+    const icon = document.getElementById('icon-lagu-index');
+    const text = document.getElementById('text-lagu-index');
+    audio.src = 'g/kelas.mp3';
+    function updateIcon() {
+        if (!audio.paused) {
+            icon.classList.remove('fa-music');
+            icon.classList.add('fa-pause');
+            text.textContent = 'Pause';
+        } else {
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-music');
+            text.textContent = 'Putar Lagu';
+        }
+    }
+    if (btn) {
+        btn.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
+            updateIcon();
+        });
+    }
+    audio.addEventListener('play', () => {
+        setAudioStatus(true, audio.currentTime);
+        updateIcon();
+    });
+    audio.addEventListener('pause', () => {
+        setAudioStatus(false, audio.currentTime);
+        updateIcon();
+    });
+    audio.addEventListener('timeupdate', () => setAudioStatus(!audio.paused, audio.currentTime));
+    // Jika reload, lanjutkan jika sebelumnya play
+    window.addEventListener('DOMContentLoaded', () => {
+        if (getAudioStatus()) {
+            audio.currentTime = getAudioTime();
+            audio.play();
+        }
+        updateIcon();
+    });
+}
+
+// === PORTOFOLIO.HTML AUDIO ===
+if (document.getElementById('lagu-porto')) {
+    const audio = document.getElementById('lagu-porto');
+    const btn = document.getElementById('btn-lagu-porto');
+    const icon = document.getElementById('icon-lagu-porto');
+    function updateIcon() {
+        if (!audio.paused) {
+            icon.classList.remove('fa-music');
+            icon.classList.add('fa-pause');
+        } else {
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-music');
+        }
+    }
+    btn.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+        updateIcon();
+    });
+    audio.addEventListener('play', () => {
+        setAudioStatus(true, audio.currentTime);
+        updateIcon();
+    });
+    audio.addEventListener('pause', () => {
+        setAudioStatus(false, audio.currentTime);
+        updateIcon();
+    });
+    audio.addEventListener('timeupdate', () => setAudioStatus(!audio.paused, audio.currentTime));
+    // Otomatis play saat halaman dimuat
+    window.addEventListener('DOMContentLoaded', () => {
+        audio.currentTime = getAudioTime();
+        audio.muted = false;
+        audio.play();
+        updateIcon();
+    });
+    // Sync jika tab lain mengubah status
+    window.addEventListener('storage', (e) => {
+        if (e.key === AUDIO_KEY || e.key === AUDIO_TIME_KEY) {
+            if (getAudioStatus()) {
+                audio.currentTime = getAudioTime();
+                audio.play();
+            } else {
+                audio.pause();
+            }
+            updateIcon();
+        }
+    });
+}
