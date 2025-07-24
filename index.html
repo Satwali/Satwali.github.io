@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XII PPLG 1 | Satwa_Liar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e88e5;
+            --primary-dark: #1565c0;
+            --primary-light: #42a5f5;
+            --white: #ffffff;
+            --light-bg: #f5f9ff;
+            --text: #333333;
+            --text-light: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: var(--white);
+    padding: 8px 0 8px 0;
+    min-height: 56px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+        
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 40px;
+}
+        
+        .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    height: 44px;
+    width: auto;
+}
+
+        
+        .logo i {
+            font-size: 2rem;
+        }
+        
+.logo-text h1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+        
+.logo-text p {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-top: 2px;
+}
+        
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 18px;
+    margin-top: 0;
+    align-items: center;
+}
+        
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.98rem;
+    transition: all 0.3s ease;
+    padding: 4px 0;
+    position: relative;
+    letter-spacing: 0.5px;
+}
+        
+        nav a:hover {
+            opacity: 0.8;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--white);
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+.portfolio-nav-btn {
+    background-color: var(--white);
+    color: var(--primary);
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+        
+        .portfolio-nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            opacity: 1;
+        }
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+.hero {
+    background: linear-gradient(rgba(30, 136, 229, 0.9), rgba(21, 101, 192, 0.9)), url('ft/atas.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 120px 0 80px 0;
+    text-align: center;
+    min-height: 420px;
+    width: 100%;
+    left: unset;
+    right: unset;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+}
+        
+.hero h2 {
+    font-size: 1.7rem;
+    margin-bottom: 16px;
+    animation: fadeIn 1s ease;
+    letter-spacing: 1px;
+}
+        
+.hero p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 22px;
+    animation: fadeIn 1.5s ease;
+}
+        
+.btn {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary);
+    padding: 8px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.98rem;
+    transition: all 0.3s ease;
+    animation: fadeIn 3s ease;
+}
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-light);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+        
+        /* Students Section */
+        .students {
+            background-color: var(--white);
+        }
+        
+        .students-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .student-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .student-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .student-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .student-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .student-card:hover .student-img img {
+            transform: scale(1.1);
+        }
+        
+        .student-info {
+            padding: 20px;
+        }
+        
+        .student-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+        
+        .student-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: var(--primary);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        .show-more-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .show-more-btn button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .show-more-btn button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(30, 136, 229, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--white);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item i {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-top: 3px;
+        }
+        
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.2);
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-light);
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            .about-img, .about-text {
+                flex: none;
+                width: 100%;
+            }
+            .hero {
+                padding: 60px 0 40px 0;
+                min-height: 220px;
+            }
+            header {
+                padding: 6px 0;
+            }
+            .logo img {
+                height: 36px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                position: fixed;
+                top: 56px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 56px);
+                background-color: var(--primary-dark);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                transition: all 0.5s ease;
+                z-index: 99;
+            }
+            .nav.active {
+                left: 0;
+            }
+            .nav ul {
+                flex-direction: column;
+                gap: 24px;
+            }
+            .mobile-menu {
+                display: block;
+            }
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+            .hero p {
+                font-size: 0.95rem;
+            }
+            header {
+                padding: 4px 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .btn {
+                display: block;
+                width: max-content;
+                margin: 0 auto 15px;
+            }
+            
+            .btn-outline {
+                margin-left: auto;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+    <img src="ft/putih.png" alt="Logo Sekolah">
+    <div class="logo-text">
+        <h1>XII PPLG 1</h1>
+        <p>Satwa_Liar</p>
+    </div>
+</div>
+
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a  href="#about">Tentang</a></li>
+                    <li><a  href="#students">Siswa</a></li>
+                    <li><a  href="#gallery">Galeri</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Selamat Datang di Kelas XII PPLG 1</h2>
+            <p>Kelas Pengembangan Perangkat Lunak dan Gim angkatan 2023-2026 yang penuh dengan bakat dan kreativitas di bidang Pengembangan Perangkat Lunak dan Gim.</p>
+            <div style="margin-bottom: 18px;">
+                <a href="#about" class="btn">Pelajari Lebih Lanjut</a>
+                <a href="portofolio.html" class="btn btn-outline" target="_blank">Lihat Portofolio Siswa</a>
+            </div>
+            <button class="btn btn-lagu" onclick="playAudio()">Putar Lagu 🎵</button>
+            <audio id="lagu">
+              <source src="g/kelas.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+    </section>
+    <script src="main.js"></script>
+
+
+    <style>
+    /* HERO FULLSCREEN OVERRIDE */
+    .hero {
+        min-height: 100vh !important;
+        padding: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-content {
+        max-width: 950px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+        min-height: 500px;
+    }
+    .hero h2 {
+        font-size: 2.7rem;
+        margin-bottom: 24px;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        line-height: 1.15;
+        animation: fadeIn 1s ease;
+    }
+    .hero p {
+        font-size: 1.25rem;
+        max-width: 700px;
+        margin: 0 auto 32px;
+        animation: fadeIn 1.5s ease;
+        line-height: 1.6;
+    }
+    .btn-lagu {
+        background: var(--primary-light);
+        color: #fff;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 14px 40px;
+        margin-top: 16px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 8px rgba(30,136,229,0.10);
+        cursor: pointer;
+        transition: all 0.2s;
+        outline: none;
+    }
+    .btn-lagu:hover {
+        background: var(--primary);
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(30,136,229,0.13);
+    }
+    @media (max-width: 992px) {
+        .hero {
+            min-height: 80vh !important;
+        }
+        .hero-content {
+            max-width: 98vw;
+            padding: 0 10px;
+            min-height: 350px;
+            height: 70vh;
+        }
+        .hero h2 {
+            font-size: 1.7rem;
+        }
+        .hero p {
+            font-size: 1.05rem;
+        }
+    }
+    @media (max-width: 768px) {
+        .hero {
+            min-height: 70vh !important;
+        }
+        .hero-content {
+            max-width: 99vw;
+            padding: 0 8px;
+            min-height: 220px;
+            height: 60vh;
+        }
+        .hero h2 {
+            font-size: 1.2rem;
+        }
+        .hero p {
+            font-size: 0.95rem;
+        }
+    }
+    </style>
+
+
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Kami</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="ft/about.jpg" alt="Kelas PPLG">
+                </div>
+                <div class="about-text">
+                    <h3>XII PPLG 1/Satwa_Liar</h3>
+                    <p>Kelas XII PPLG 1? Wah, ini dia tempat ngumpulnya para pejuang ngoding dan pencari error sejati! Kami adalah 24 siswa di MAKN Ende yang tiap harinya bergelut dengan kode, error, dan... kopi sachet. 😎</p>
+                    <p>Di sini kami belajar bikin aplikasi, web, dan game. Kadang sukses, kadang juga layar jadi putih semua tanpa sebab. Tapi tenang, kami tetap semangat—karena di balik setiap error, selalu ada tawa, panik bareng, dan kalimat sakral: “coba restart dulu”. 😅</p>
+                    <p>Belajar di PPLG itu nggak cuma soal coding, tapi juga soal kekompakan, saling ngetawain bug, dan bikin kelas jadi tempat yang seru, rame, dan auto ngakak tiap hari!</p>
+                    <p>Kami belajar berbagai teknologi web dan pemrograman seperti HTML, CSS, PHP, Java, dan lainnya. Kami juga membuat proyek web dan mobile yang kadang hasilnya bikin bangga, tapi nggak jarang juga bikin ketawa kalau tampilannya tiba-tiba ngaco atau error di saat terakhir 😄</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Students Section -->
+    <section class="section students" id="students">
+        <div class="container">
+            <div class="section-title">
+                <h2>Anggota Kelas</h2>
+            </div>
+            <div class="students-grid">
+                <!-- Siswa 1 -->
+                <div class="student-card">
+                    <div class="student-img">
+                        <img src="ft/HABIB.JPG" alt="Habib">
+                    </div>
+                    <div class="student-info">
+                        <h3>M. Habib Ratuloli</h3>
+                        <p>Ketua Kelas</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/muhammadhabibratuloly/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkN8SBVA/3YgUC1cnG4Cc9JhKfei2PQ/edit?utm_content=DAGbkN8SBVA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Siswa 2 -->
+                <div class="student-card">
+                    <div class="student-img">
+                        <img src="ft/UMI.JPG" alt="UMI">
+                    </div>
+                    <div class="student-info">
+                        <h3>Suhaila Kalsum Kabari</h3>
+                        <p>Sekertaris</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/suh.4174h/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkHbm5_U/IDuq1g9pEzD7c2N6scdZiA/edit?utm_content=DAGbkHbm5_U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Siswa 3 -->
+                <div class="student-card">
+                    <div class="student-img">
+                        <img src="ft/ILYANI.JPG" alt="ILYANI">
+                    </div>
+                    <div class="student-info">
+                        <h3>Nur Ilyani</h3>
+                        <p>Bendahara</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/ilyaninur20/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkCR8uvg/D2RQsbbtQTEM5fXCPdX-JA/edit?utm_content=DAGbkCR8uvg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Siswa 4 -->
+                <div class="student-card">
+                    <div class="student-img">
+                        <img src="ft/FITRI.JPG" alt="FITRI">
+                    </div>
+                    <div class="student-info">
+                        <h3>Fitria Khairunnisa P.D</h3>
+                        <p>Keamanan</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/fhiit.22/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkKfR0SI/kU6Jx2G-vaZwpdagGGXPFA/edit?utm_content=DAGbkKfR0SI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+
+                
+                <!-- Siswa tersembunyi -->
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/SUBANDRIO.JPG" alt="Subandrio">
+                    </div>
+                    <div class="student-info">
+                        <h3>Subandrio</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/ryosgtrs_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkA359eQ/4giyLBsM_aOqyD6510i4WQ/edit?utm_content=DAGbkA359eQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/ASTITIN.JPG" alt="Astitin">
+                    </div>
+                    <div class="student-info">
+                        <h3>Astitin Janurti</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/astitin0125/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkcYaGE0/DzRsxmnw86mzukOEUb5w8Q/edit?utm_content=DAGbkcYaGE0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/IRHAM.JPG" alt="IRHAM">
+                    </div>
+                    <div class="student-info">
+                        <h3>Irham Hanafi</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/naaffy._/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGeABTrWUs/Lai0l42O99mLsgGu9QlL5A/view?utm_content=DAGeABTrWUs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he1bd6374e7" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/ARDINI.JPG" alt="Ardini">
+                    </div>
+                    <div class="student-info">
+                        <h3>Aisyah Ardini</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/iniidiniii_28/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGfUZ4-RgY/xZ3nZl3xcHXxEqC0yyYrfQ/edit?utm_content=DAGfUZ4-RgY&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/MEISYA.JPG" alt="MEISYA">
+                    </div>
+                    <div class="student-info">
+                        <h3>Nurul Meisya</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/nurulmeisya5/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkCHBYKc/kJA_YolDAf2jtN2aYcD7hw/edit?utm_content=DAGbkCHBYKc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/HANIF.JPG" alt="Hanif">
+                    </div>
+                    <div class="student-info">
+                        <h3>Muhammad Hanif Dakhilullah</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/dakhilullah_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGeAe3iqw4/Q8PC9froADviFDX32XdgqA/edit?utm_content=DAGeAe3iqw4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/ZEE.JPG" alt="Azizah">
+                    </div>
+                    <div class="student-info">
+                        <h3>Azizah Nur Qamariah</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/azzhqmrh_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="http://surl.li/rogppk" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/FAIT.JPG" alt="Faith">
+                    </div>
+                    <div class="student-info">
+                        <h3>Faith Arkana Rafi</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/fvitharka_/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkA8MDc0/e_ehbdlHBpz-kYxgfTOn7g/edit?utm_content=DAGbkA8MDc0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/IYAAS.JPG" alt="Iyaas">
+                    </div>
+                    <div class="student-info">
+                        <h3>Iyaas Raafi</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/iyaas_raafi/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkBEa-Ro/b4wA4ifB7GfO8TqMbRsJkQ/edit?utm_content=DAGbkBEa-Ro&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/MAHYA.JPG" alt="Mahya">
+                    </div>
+                    <div class="student-info">
+                        <h3>Syamsiah Nadiah Mahya</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/ndyh_rl/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbj9UL7hI/Z78hK4sI53wcnSDu2y_zJA/edit?utm_content=DAGbj9UL7hI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/BASBA.JPG" alt="Basba">
+                    </div>
+                    <div class="student-info">
+                        <h3>Muhammad Basba Rodja</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/kyy_rj/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkTcbED0/9wiViov6EjJsPZ2V3somXQ/edit?utm_content=DAGbkTcbED0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/EMSIT.JPG" alt="EMSIT">
+                    </div>
+                    <div class="student-info">
+                        <h3>Ummi Aminah Damanhuri</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/youronlyemsit/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbqrmBvX8/pSSC2hNVPuNbdCVBOwJFyA/edit?utm_content=DAGbqrmBvX8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/FAIZ.JPG" alt="FAIZ">
+                    </div>
+                    <div class="student-info">
+                        <h3>Faiz Ibadirahman Menge</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/faiiiz29/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkMMWtUA/ntMHQpTvVFD0GTN3mHX3TQ/edit?utm_content=DAGbkMMWtUA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/CAHAYA.JPG" alt="Cahaya">
+                    </div>
+                    <div class="student-info">
+                        <h3>Cahaya Sari Bleztania K.</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/ayaaa_a98/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkM-I4HQ/trCXe7JtotBeHk8wj-heQA/edit?utm_content=DAGbkM-I4HQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/DANDI.JPG" alt="DANDI">
+                    </div>
+                    <div class="student-info">
+                        <h3>Dandi Ardianto Jaku</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href =# target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkJoxZ2I/F6OorwvZdiwHrYq3fzAWPQ/edit?utm_content=DAGbkJoxZ2I&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/KIKAN.JPG" alt="Kikan">
+                    </div>
+                    <div class="student-info">
+                        <h3>Kikan Syri'ah</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/kikan_1304/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkM-JQzk/t8dMvYrKuAtWRewKFLJGdw/edit?utm_content=DAGbkM-JQzk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/NABILA.JPG" alt="Nabila">
+                    </div>
+                    <div class="student-info">
+                        <h3>Nabila Azzahroh</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/nbilaaa_zhrh/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbm2smsqs/JgnWk-te9yhvB58S9f4-7Q/view?utm_content=DAGbm2smsqs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd124fdde62" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/SUBHAN.JPG" alt="Subhan">
+                    </div>
+                    <div class="student-info">
+                        <h3>Muhamad Subhan</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/mhmd_subhan23/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="ft/cv subhan.png" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/AULIA.JPG" alt="Auliyah">
+                    </div>
+                    <div class="student-info">
+                        <h3>Auliyah Nafiatul Manahil</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/qr5tu7/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkIzWvzQ/KyWpDVBLYHilnCAM-0rCvw/edit?utm_content=DAGbkIzWvzQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="student-card hidden">
+                    <div class="student-img">
+                        <img src="ft/syafik.png" alt="syafik">
+                    </div>
+                    <div class="student-info">
+                        <h3>Muhammad Syafiq Kemang</h3>
+                        <p>Anggota</p>
+                        <div class="social-links">
+                            <a href ="https://www.instagram.com/syafiq_kemang/" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.canva.com/design/DAGbkJPVM2o/TcFcopH_TCjbgpOcmrhQNw/edit?utm_content=DAGbkJPVM2o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                
+            </div>
+            
+            <div class="show-more-btn">
+                <button id="show-more-students">Lihat Lainnya</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Galeri Kegiatan</h2>
+            </div>
+            <div class="gallery-grid">
+                <!-- Foto 1 -->
+                <div class="gallery-item">
+                    <img src="ft/atas.jpg" alt="Kegiatan Belajar">
+                    <div class="gallery-overlay">
+                        <h3>Kenangan PKL</h3>
+                    </div>
+                </div>
+                
+                <!-- Foto 2 -->
+                <div class="gallery-item">
+                    <img src="g/2.JPG" alt="Presentasi Projek">
+                    <div class="gallery-overlay">
+                        <h3>Hari Batik</h3>
+                    </div>
+                </div>
+                
+                <!-- Foto 3 -->
+                <div class="gallery-item">
+                    <img src="g/3.jpg" alt="Diskusi Kelompok">
+                    <div class="gallery-overlay">
+                        <h3>Hari Guru</h3>
+                    </div>
+                </div>
+                
+                <!-- Foto 4 -->
+                <div class="gallery-item">
+                    <img src="g/4.jpg" alt="Kegiatan Outbound">
+                    <div class="gallery-overlay">
+                        <h3>Guru Terfavorit</h3>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="gallery-item">
+                    <img src="g/5.jpg" alt="Kegiatan Outbound">
+                    <div class="gallery-overlay">
+                        <h3>Sama Mis Cia</h3>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="gallery-item">
+                    <img src="g/6.jpg" alt="Kegiatan Outbound">
+                    <div class="gallery-overlay">
+                        <h3>ID Card</h3>
+                    </div>
+                </div>
+                
+                <!-- Foto tersembunyi -->
+                <div class="gallery-item hidden">
+                    <img src="g/8.JPG" alt="Workshop">
+                    <div class="gallery-overlay">
+                        <h3>PKL</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item hidden">
+                    <img src="g/10.jpg" alt="Foto Kelas">
+                    <div class="gallery-overlay">
+                        <h3>PKL</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item hidden">
+                    <img src="g/9.jpg" alt="Praktikum">
+                    <div class="gallery-overlay">
+                        <h3>PKL</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="show-more-btn">
+                <button id="show-more-gallery">Lihat Lainnya</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Hubungi Xll PPLG 1</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Informasi Kontak</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Sekolah</h4>
+                                <p>Madrasah Aliyah Kejuruan Negeri Ende</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-instagram"></i>
+                            <div>
+                                <h4>Instagram</h4>
+                                <p>𝐬𝐜𝐩𝐩𝐥𝐠𝟏.𝐰𝐨𝐫𝐥𝐝</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Telepon</h4>
+                                <p>-</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-media">
+                        <h4>Informasi Sekolah </h4>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/makn.ende/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="https://www.tiktok.com/@makn_ende" target="_blank"><i class="fab fa-tiktok fa-2x"></i></a>
+                            <a href="makn-ende.sch.id"><i class="fas fa-globe fa-2x" target="_blank"></i></a>
+                            <a href="https://www.youtube.com/@maknende" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Tentang XII PPLG 1</h3>
+                    <p>Kami adalah kelas XII PPLG 1, angkatan 2023-2026 dari MAKN Ende — sekumpulan calon developer, desainer, dan pemecah bug sejati yang sedang berjuang menaklukkan dunia teknologi satu baris kode dalam satu waktu. Di kelas ini, ngoding bukan cuma pelajaran, tapi gaya hidup (dan kadang sumber stres). Soal project? Gas terus. Soal error? Panik dulu, baru cari solusinya.</p>
+                    <p>XII PPLG 1 bukan cuma kelas, tapi markas besar anak-anak kreatif yang siap bikin karya luar biasa… asal WiFi-nya nggak lemot.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#students">Anggota Kelas</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Kompetensi Keahlian</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Pemrograman Web</a></li>
+                        <li><a href="#">Pemrograman Mobile</a></li>
+                        <li><a href="#">Basis Data</a></li>
+                        <li><a href="#">Pengembangan Game</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; XII PPLG 1 - Satwa_Liar (MAKN Ende)</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- CURSOR ANIMASI HEWAN & JEJAK ---
+        // Daftar gambar hewan kecil (gunakan gambar di folder ft/ atau emoji sebagai fallback)
+        const animalImgs = [
+            'ft/putih.png', 'ft/atas.jpg', 'ft/ARDINI.JPG', 'ft/ASTITIN.JPG', 'ft/AULIA.JPG', 'ft/BASBA.JPG',
+            'ft/CAHAYA.JPG', 'ft/DANDI.JPG', 'ft/DINI.JPG', 'ft/EMSIT.JPG', 'ft/FAIT.JPG', 'ft/FAIZ.JPG',
+            'ft/FITRI.JPG', 'ft/HABIB.JPG', 'ft/HANIF.JPG', 'ft/ILYANI.JPG', 'ft/IRHAM.JPG', 'ft/IYAAS.JPG',
+            'ft/KIKAN.JPG', 'ft/MAHYA.JPG', 'ft/MEISYA.JPG', 'ft/NABILA.JPG', 'ft/SUBANDRIO.JPG', 'ft/SUBHAN.JPG',
+            'ft/UMI.JPG', 'ft/ZEE.JPG', 'ft/syafik.png'
+        ];
+        // Buat elemen cursor custom
+        const cursor = document.createElement('div');
+        cursor.id = 'custom-cursor';
+        document.body.appendChild(cursor);
+        cursor.style.position = 'fixed';
+        cursor.style.pointerEvents = 'none';
+        cursor.style.zIndex = '9999';
+        cursor.style.width = '22px';
+        cursor.style.height = '22px';
+        cursor.style.transform = 'translate(-50%, -50%)';
+        cursor.style.borderRadius = '50%';
+        cursor.style.background = 'rgba(255,255,255,0.18)';
+        cursor.style.backdropFilter = 'blur(6px)';
+        cursor.style.boxShadow = '0 0 16px 8px rgba(255,255,255,0.18)';
+        cursor.style.display = 'block';
+        // Sembunyikan default cursor
+        document.body.style.cursor = 'none';
+        // Jejak
+        function createTrail(x, y) {
+            const trail = document.createElement('div');
+            trail.className = 'cursor-trail';
+            trail.style.position = 'fixed';
+            trail.style.left = x + 'px';
+            trail.style.top = y + 'px';
+            trail.style.width = '18px';
+            trail.style.height = '18px';
+            trail.style.borderRadius = '50%';
+            trail.style.background = 'rgba(30,136,229,0.15)';
+            trail.style.pointerEvents = 'none';
+            trail.style.zIndex = '9998';
+            trail.style.transition = 'opacity 0.7s linear';
+            document.body.appendChild(trail);
+            setTimeout(() => { trail.style.opacity = '0'; }, 10);
+            setTimeout(() => { trail.remove(); }, 700);
+        }
+        // Hewan random
+        function createAnimal(x, y) {
+            const img = document.createElement('img');
+            img.src = animalImgs[Math.floor(Math.random() * animalImgs.length)];
+            img.style.position = 'fixed';
+            img.style.left = (x + Math.random()*30-15) + 'px';
+            img.style.top = (y + Math.random()*30-15) + 'px';
+            img.style.width = '28px';
+            img.style.height = '28px';
+            img.style.borderRadius = '50%';
+            img.style.objectFit = 'cover';
+            img.style.pointerEvents = 'none';
+            img.style.zIndex = '9998';
+            img.style.opacity = '0.85';
+            img.style.transition = 'opacity 0.8s linear, transform 0.8s linear';
+            document.body.appendChild(img);
+            setTimeout(() => {
+                img.style.opacity = '0';
+                img.style.transform = 'scale(1.3) translateY(-10px)';
+            }, 10);
+            setTimeout(() => { img.remove(); }, 800);
+        }
+        // Gerak cursor
+        // Throttle gambar hewan agar tidak terlalu sering
+let lastAnimalTime = 0;
+const animalDelay = 350; // ms, lebih lama agar tidak spam
+document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    createTrail(e.clientX, e.clientY);
+    const now = Date.now();
+    if (now - lastAnimalTime > animalDelay) {
+        createAnimal(e.clientX, e.clientY);
+        lastAnimalTime = now;
+    }
+});
+        // Sembunyikan cursor custom saat keluar window
+        document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
+        document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
+
+        // --- STICKY NAVBAR ---
+        const nav = document.querySelector('header');
+        const navBar = document.getElementById('navbar');
+        
+        // Set style default (gradient biru)
+        nav.style.cssText = `
+            transition: box-shadow 0.3s ease;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        `;
+
+        // Tambah shadow saat scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                nav.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Setup Intersection Observer untuk animasi smooth
+        const options = {
+            threshold: 0.1, // Trigger lebih awal untuk animasi yang lebih smooth
+            rootMargin: '-80px 0px 0px 0px' // Offset untuk header height
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const targetSection = entry.target;
+                
+                // Dapatkan posisi scroll
+                const scrollPosition = window.scrollY;
+                const heroSection = document.querySelector('.hero');
+                const studentsSection = document.querySelector('.students');
+                const contactSection = document.querySelector('.contact');
+                
+                // Cek posisi sections
+                const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+                const studentsTop = studentsSection.offsetTop;
+                const studentsBottom = studentsSection.offsetTop + studentsSection.offsetHeight;
+                const contactTop = contactSection.offsetTop;
+                
+                // Update navbar style berdasarkan posisi scroll
+                if (scrollPosition < heroBottom - 100) {
+                    updateNavStyle(false); // Default style di hero section
+                } else if (scrollPosition >= studentsTop - 100 && scrollPosition <= studentsBottom) {
+                    updateNavStyle(true); // Light style di students section
+                } else if (scrollPosition >= contactTop - 100) {
+                    updateNavStyle(true); // Light style di contact section
+                } else {
+                    updateNavStyle(false); // Default style di sections lain
+                }
+            });
+        }, options);
+
+        // Observe semua section
+        document.querySelectorAll('.hero, .about, .students, .contact').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Set warna default saat load
+        updateNavStyle(headerClasses.default);
+        
+        // Update sticky class saat scroll
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('sticky', window.scrollY > 0);
+        });
+        //audio
+  function playAudio() {
+    const audio = document.getElementById("lagu");
+    audio.play().catch((err) => {
+      alert("Gagal memutar lagu: " + err.message);
+    });
+  }
+
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navbar = document.getElementById('navbar');
+        
+        mobileMenu.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            mobileMenu.innerHTML = navbar.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if (navbar.classList.contains('active')) {
+                    navbar.classList.remove('active');
+                    mobileMenu.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Scroll Animation
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+        
+        // Show More Students
+        const showMoreStudentsBtn = document.getElementById('show-more-students');
+        const hiddenStudents = document.querySelectorAll('.student-card.hidden');
+        
+        showMoreStudentsBtn.addEventListener('click', () => {
+            hiddenStudents.forEach(student => {
+                student.classList.toggle('hidden');
+            });
+            
+            if (showMoreStudentsBtn.textContent === 'Lihat Lainnya') {
+                showMoreStudentsBtn.textContent = 'Sembunyikan';
+            } else {
+                showMoreStudentsBtn.textContent = 'Lihat Lainnya';
+                // Scroll ke section students setelah menyembunyikan
+                document.getElementById('students').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+        
+        // Show More Gallery
+        const showMoreGalleryBtn = document.getElementById('show-more-gallery');
+        const hiddenGalleryItems = document.querySelectorAll('.gallery-item.hidden');
+        
+        showMoreGalleryBtn.addEventListener('click', () => {
+            hiddenGalleryItems.forEach(item => {
+                item.classList.toggle('hidden');
+            });
+            
+            if (showMoreGalleryBtn.textContent === 'Lihat Lainnya') {
+                showMoreGalleryBtn.textContent = 'Sembunyikan';
+            } else {
+                showMoreGalleryBtn.textContent = 'Lihat Lainnya';
+                // Scroll ke section gallery setelah menyembunyikan
+                document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
