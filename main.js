@@ -1,4 +1,17 @@
 // ====== GABUNGAN JS index.html & portofolio.html ======
+
+// --- AUTO PLAY AUDIO ON PORTOFOLIO REDIRECT ---
+document.querySelectorAll('a[href$="portofolio.html"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        // Jika audio sedang play, set flag agar portofolio.html auto play
+        const audio = document.getElementById('lagu') || document.getElementById('lagu-porto');
+        if (audio && !audio.paused) {
+            localStorage.setItem('playAudioOnPorto', '1');
+        } else {
+            localStorage.removeItem('playAudioOnPorto');
+        }
+    });
+});
 // Smooth scroll for anchor links
 // (Juga handle mobile menu close)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -17,14 +30,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-// Custom Cursor & Trail & Animal/Student Image
-const animalImgs = [
-    'ft/putih.png', 'ft/atas.jpg', 'ft/ARDINI.JPG', 'ft/ASTITIN.JPG', 'ft/AULIA.JPG', 'ft/BASBA.JPG',
-    'ft/CAHAYA.JPG', 'ft/DANDI.JPG', 'ft/DINI.JPG', 'ft/EMSIT.JPG', 'ft/FAIT.JPG', 'ft/FAIZ.JPG',
-    'ft/FITRI.JPG', 'ft/HABIB.JPG', 'ft/HANIF.JPG', 'ft/ILYANI.JPG', 'ft/IRHAM.JPG', 'ft/IYAAS.JPG',
-    'ft/KIKAN.JPG', 'ft/MAHYA.JPG', 'ft/MEISYA.JPG', 'ft/NABILA.JPG', 'ft/SUBANDRIO.JPG', 'ft/SUBHAN.JPG',
-    'ft/UMI.JPG', 'ft/ZEE.JPG', 'ft/syafik.png'
-];
+document.body.style.cursor = 'none';
+// Custom cursor: bulat transparan blur, tanpa animasi gambar/trail
 const cursor = document.createElement('div');
 cursor.id = 'custom-cursor';
 document.body.appendChild(cursor);
@@ -40,58 +47,21 @@ cursor.style.backdropFilter = 'blur(6px)';
 cursor.style.boxShadow = '0 0 16px 8px rgba(255,255,255,0.18)';
 cursor.style.display = 'block';
 document.body.style.cursor = 'none';
-function createTrail(x, y) {
-    const trail = document.createElement('div');
-    trail.className = 'cursor-trail';
-    trail.style.position = 'fixed';
-    trail.style.left = x + 'px';
-    trail.style.top = y + 'px';
-    trail.style.width = '18px';
-    trail.style.height = '18px';
-    trail.style.borderRadius = '50%';
-    trail.style.background = 'rgba(30,136,229,0.15)';
-    trail.style.pointerEvents = 'none';
-    trail.style.zIndex = '9998';
-    trail.style.transition = 'opacity 0.7s linear';
-    document.body.appendChild(trail);
-    setTimeout(() => { trail.style.opacity = '0'; }, 10);
-    setTimeout(() => { trail.remove(); }, 700);
+let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+function animateCursor() {
+    cursorX += (mouseX - cursorX) * 0.25;
+    cursorY += (mouseY - cursorY) * 0.25;
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    requestAnimationFrame(animateCursor);
 }
-function createAnimal(x, y) {
-    const img = document.createElement('img');
-    img.src = animalImgs[Math.floor(Math.random() * animalImgs.length)];
-    img.style.position = 'fixed';
-    img.style.left = (x + Math.random()*30-15) + 'px';
-    img.style.top = (y + Math.random()*30-15) + 'px';
-    img.style.width = '28px';
-    img.style.height = '28px';
-    img.style.borderRadius = '50%';
-    img.style.objectFit = 'cover';
-    img.style.pointerEvents = 'none';
-    img.style.zIndex = '9998';
-    img.style.opacity = '0.85';
-    img.style.transition = 'opacity 0.8s linear, transform 0.8s linear';
-    document.body.appendChild(img);
-    setTimeout(() => {
-        img.style.opacity = '0';
-        img.style.transform = 'scale(1.3) translateY(-10px)';
-    }, 10);
-    setTimeout(() => { img.remove(); }, 800);
-}
-let lastAnimalTime = 0;
-const animalDelay = 350;
 document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    createTrail(e.clientX, e.clientY);
-    const now = Date.now();
-    if (now - lastAnimalTime > animalDelay) {
-        createAnimal(e.clientX, e.clientY);
-        lastAnimalTime = now;
-    }
+    mouseX = e.clientX;
+    mouseY = e.clientY;
 });
 document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
 document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
+requestAnimationFrame(animateCursor);
 // Sticky Navbar shadow
 document.addEventListener('scroll', () => {
     const nav = document.querySelector('header');
@@ -165,70 +135,36 @@ function getAudioTime() {
     return parseFloat(localStorage.getItem(AUDIO_TIME_KEY) || '0');
 }
 
-// === INDEX.HTML AUDIO ===
-if (document.getElementById('lagu')) {
-    const audio = document.getElementById('lagu');
-    const btn = document.getElementById('btn-lagu-index');
-    const icon = document.getElementById('icon-lagu-index');
-    const text = document.getElementById('text-lagu-index');
-    audio.src = 'g/kelas.mp3';
-    function updateIcon() {
-        if (!audio.paused) {
-            icon.classList.remove('fa-music');
-            icon.classList.add('fa-pause');
-            text.textContent = 'Pause';
-        } else {
-            icon.classList.remove('fa-pause');
-            icon.classList.add('fa-music');
-            text.textContent = 'Putar Lagu';
-        }
-    }
-    if (btn) {
-        btn.addEventListener('click', function() {
-            if (audio.paused) {
-                audio.play();
-            } else {
-                audio.pause();
-            }
-            updateIcon();
-        });
-    }
-    audio.addEventListener('play', () => {
-        setAudioStatus(true, audio.currentTime);
-        updateIcon();
-    });
-    audio.addEventListener('pause', () => {
-        setAudioStatus(false, audio.currentTime);
-        updateIcon();
-    });
-    audio.addEventListener('timeupdate', () => setAudioStatus(!audio.paused, audio.currentTime));
-    // Jika reload, lanjutkan jika sebelumnya play
-    window.addEventListener('DOMContentLoaded', () => {
-        if (getAudioStatus()) {
-            audio.currentTime = getAudioTime();
-            audio.play();
-        }
-        updateIcon();
-    });
-}
 
-// === PORTOFOLIO.HTML AUDIO ===
-if (document.getElementById('lagu-porto')) {
-    const audio = document.getElementById('lagu-porto');
-    const btn = document.getElementById('btn-lagu-porto');
-    const icon = document.getElementById('icon-lagu-porto');
+// === UNIVERSAL AUDIO BUTTON (index.html & portofolio.html) ===
+const audio = document.getElementById('lagu') || document.getElementById('lagu-porto');
+const btn = document.getElementById('btn-lagu-index') || document.getElementById('btn-lagu-porto');
+const icon = document.getElementById('icon-lagu-index') || document.getElementById('icon-lagu-porto');
+const text = document.getElementById('text-lagu-index');
+
+if (audio && btn && icon) {
+    if (!audio.src || audio.src === window.location.href) {
+        audio.src = 'g/kelas.mp3';
+    }
     function updateIcon() {
         if (!audio.paused) {
             icon.classList.remove('fa-music');
             icon.classList.add('fa-pause');
+            if (text) text.textContent = 'Pause';
         } else {
             icon.classList.remove('fa-pause');
             icon.classList.add('fa-music');
+            if (text) text.textContent = 'Putar Lagu';
         }
     }
     btn.addEventListener('click', function() {
+        audio.muted = false;
+        audio.removeAttribute('muted');
         if (audio.paused) {
-            audio.play();
+            audio.play().catch((err) => {
+                alert('Browser memblokir pemutaran otomatis. Silakan izinkan audio di browser Anda.');
+                console.error('Audio play error:', err);
+            });
         } else {
             audio.pause();
         }
@@ -243,11 +179,15 @@ if (document.getElementById('lagu-porto')) {
         updateIcon();
     });
     audio.addEventListener('timeupdate', () => setAudioStatus(!audio.paused, audio.currentTime));
-    // Otomatis play saat halaman dimuat
+    // Autoplay jika reload dan sebelumnya play, atau jika flag playAudioOnPorto ada
     window.addEventListener('DOMContentLoaded', () => {
         audio.currentTime = getAudioTime();
-        audio.muted = false;
-        audio.play();
+        if (getAudioStatus() || localStorage.getItem('playAudioOnPorto') === '1') {
+            audio.muted = false;
+            audio.removeAttribute('muted');
+            audio.play().catch(() => {});
+            localStorage.removeItem('playAudioOnPorto');
+        }
         updateIcon();
     });
     // Sync jika tab lain mengubah status
@@ -255,7 +195,9 @@ if (document.getElementById('lagu-porto')) {
         if (e.key === AUDIO_KEY || e.key === AUDIO_TIME_KEY) {
             if (getAudioStatus()) {
                 audio.currentTime = getAudioTime();
-                audio.play();
+                audio.muted = false;
+                audio.removeAttribute('muted');
+                audio.play().catch(() => {});
             } else {
                 audio.pause();
             }
